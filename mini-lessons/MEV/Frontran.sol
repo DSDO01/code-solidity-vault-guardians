@@ -13,18 +13,6 @@ contract FrontRan {
         s_secretHash = secretHash;
     }
 
-    function withdraw(string memory password) external payable {
-        if (keccak256(abi.encodePacked(password)) == s_secretHash) {
-            (bool sent,) = msg.sender.call{value: address(this).balance}("");
-            if (!sent) {
-                revert BadWithdraw();
-            }
-            emit success();
-        } else {
-            emit fail();
-        }
-    }
-
     function balance() external view returns (uint256) {
         return address(this).balance;
     }
