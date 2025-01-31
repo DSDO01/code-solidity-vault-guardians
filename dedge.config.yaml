@@ -1,0 +1,11 @@
+config:
+  framework: "foundry" 
+  framework_version: "1.8.1" 
+  package_manager: "forge"
+
+environment:
+  RPC_URL_MAINNET: "https://eth-mainnet.g.alchemy.com/v2/demo"
+
+tasks:
+  install-dependencies:
+    - forge install
